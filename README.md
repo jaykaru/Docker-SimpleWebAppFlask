@@ -8,19 +8,22 @@ apt-get update
 apt-get install -y python3
 python3 --version   # Check Python installation
 apt-get install -y python3-pip
+```
 
 ## 2. Install and Configure Web Server
+```bash
 apt-get install -y python3-flask
+```
 
 # 3. Create a folder /opt and an application file app.py inside it:
-
-
+```bash
 mkdir -p /opt
 cd /opt
 nano app.py
+```
 
 # Write the following code in app.py:
-
+```bash
 from flask import Flask
 app = Flask(__name__)
 
@@ -34,13 +37,21 @@ def hello():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
+```
 
 # 4. Start a Web Server
+```bash
 FLASK_APP=app.py flask run --host=0.0.0.0 --port=8080
+```
 
 # 5. Test URL Inside your container
-
+```bash
 curl http://127.0.0.1:8080/
-curl "http://127.0.0.1:8080/how are you"    
+curl "http://127.0.0.1:8080/how are you"
+```  
 
+# Dockerize the Application
+# Create a DockerFile
+# Build the docker image
+# Run the container with port mapping
 
